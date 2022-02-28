@@ -12,6 +12,11 @@ const student = {
   lastName: "martinez",
 };
 
+const students = [
+  (<p>Anna</p>),
+  (<p>Marco</p>)
+]
+
 const { firstName, lastName } = student;
 
 function capitalizeFirstLetter(str) {
@@ -26,11 +31,19 @@ function App() {
     <div className="App">
       
       {heading}
+
+      <button onClick={()=>console.log("Hello from the button")}> Click Me!</button>
+
+      <p>What if I want to print a number? {0}</p>
       
       <h3>
         {/* You can turn this to {firstName} {lastName} */}
         Hi, {student.firstName} {student.lastName}
       </h3>
+
+      <ul>
+          {students.map(name => <li>{name}</li>)}
+      </ul>
 
       <h4>
         In uppercase: {firstName.toUpperCase()} {lastName.toUpperCase()}
@@ -43,7 +56,8 @@ function App() {
 
       {divElement}
 
-      <img src={ironhackLogo} alt="ironhack logo" />
+      <img src={ironhackLogo} alt="ironhack logo" /> {/* If IronhackLogo is a String this behaves normally, if it's an image, the image will be embedded */
+      }
 
       <br />
       <hr />
